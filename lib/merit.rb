@@ -41,13 +41,13 @@ module Merit
     config.app_generators.orm Merit.orm
 
     initializer 'merit.controller' do |app|
-      if Merit.orm == :active_record
-        require 'merit/models/active_record/sash'
-        require 'merit/models/active_record/badges_sash'
-        require 'merit/models/active_record/merit/score'
-      elsif Merit.orm == :mongoid
+      # if Merit.orm == :active_record
+      #   require 'merit/models/active_record/sash'
+      #   require 'merit/models/active_record/badges_sash'
+      #   require 'merit/models/active_record/merit/score'
+      # elsif Merit.orm == :mongoid
         require "merit/models/mongoid/sash"
-      end
+      # end
 
       ActiveSupport.on_load(:action_controller) do
         begin
